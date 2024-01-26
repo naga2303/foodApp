@@ -1,0 +1,68 @@
+.header{
+    display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border: 1px solid black;
+  background-color: rgb(226, 226, 238);
+  
+}
+
+.body{
+    background-color: aliceblue;
+}
+
+.searchMe{
+     margin: 10px;
+     background-color: rgb(220, 236, 76);
+     border-radius: 5px;
+}
+
+.searchBox{
+    margin-top: 10px;
+    margin-left: 50px;
+}
+.navigations{
+
+justify-content: space-between;
+}
+ul{
+    display:flex;
+    list-style-type: none;
+}
+ul>li{
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    font-size: medium;
+}
+.companyName{
+    color:rgb(138, 50, 240);
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+}
+
+.res-card{
+    border: 1px solid black;
+    background-color: antiquewhite;
+    width: 200px;   
+    padding:5px;
+    cursor: pointer;
+    margin: 10px 3px;
+    border-radius: 5px;
+    
+}
+.cards{
+    display: flex;
+    flex-wrap: wrap;   
+    height:fit-content;
+    margin: 5px; 
+}
+.details{
+    margin-left:5px
+}
+.resLogo{
+    width: 200px;
+    height: 150px;
+}
