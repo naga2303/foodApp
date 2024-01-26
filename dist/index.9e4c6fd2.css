@@ -39,6 +39,16 @@ ul > li {
   font-style: italic;
 }
 
+ul > button {
+  cursor: pointer;
+  color: #00f;
+  margin: 10px;
+  padding: 10px;
+  font-family: Courier New, Courier, monospace;
+  font-size: medium;
+  font-style: italic;
+}
+
 .companyName {
   color: #8a32f0;
   font-family: Courier New, Courier, monospace;
