@@ -22,15 +22,15 @@ const Navigation = () =>{
         <div className="navigations">
             <ul className="navigate">
                 <li>
-                    Home
+                   <Link to="/">Home</Link> 
                 </li>
                 <li>
-                About
+                <Link to="/about">About</Link>
                 </li>
                 <li>
-                Carts
+                <Link to="/user">Users</Link>
                 </li>
-                <button onClick={()=>{
+                <button className="logStatus" onClick={()=>{
                     buttonName == "Login" ? setbuttonName("Logout"): setbuttonName("Login")
                 }}> {buttonName}</button>
             </ul>
