@@ -32,7 +32,7 @@ const RestaurantMenu = ()=>{
             <h3>{costForTwoMessage}</h3>
             <ul>
                 {itemCards.map((item)=>(
-                    <li>{item.card.info.name}</li>
+                    <li key={item.card.info.id}>{item.card.info.name}</li>
                 ))}
             </ul>
                
