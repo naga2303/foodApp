@@ -36202,21 +36202,56 @@ const RestaurantMenu = ()=>{
         lineNumber: 14,
         columnNumber: 32
     }, undefined);
-    //   console.log("RESTINFO: "+resInfo)
+    console.log("RESTINFO: " + resInfo);
     //const {name} = resInfo?.data?.cards[0]?.card?.card?.info;
     const { name, cuisines, costForTwoMessage } = resInfo?.cards[0]?.card?.card?.info;
+    const { itemCards } = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
+    const resCategories = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c)=>c.card?.["card"]?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
+    console.log(resCategories);
+    //console.log(itemList)
+    //console.log(resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card.categories);
+    // const itemList1 = itemList;
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "resMenu",
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-            children: name
-        }, void 0, false, {
-            fileName: "src/Components/RestaurnantMenu.js",
-            lineNumber: 22,
-            columnNumber: 13
-        }, undefined)
-    }, void 0, false, {
+        className: "menus",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                children: name
+            }, void 0, false, {
+                fileName: "src/Components/RestaurnantMenu.js",
+                lineNumber: 30,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                children: cuisines
+            }, void 0, false, {
+                fileName: "src/Components/RestaurnantMenu.js",
+                lineNumber: 31,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                children: costForTwoMessage
+            }, void 0, false, {
+                fileName: "src/Components/RestaurnantMenu.js",
+                lineNumber: 32,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                children: itemCards.map((item)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                        children: item.card.info.name
+                    }, void 0, false, {
+                        fileName: "src/Components/RestaurnantMenu.js",
+                        lineNumber: 35,
+                        columnNumber: 21
+                    }, undefined))
+            }, void 0, false, {
+                fileName: "src/Components/RestaurnantMenu.js",
+                lineNumber: 33,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
         fileName: "src/Components/RestaurnantMenu.js",
-        lineNumber: 21,
+        lineNumber: 29,
         columnNumber: 9
     }, undefined);
 };
@@ -36257,8 +36292,9 @@ const useRestaurnantMenu = (resId)=>{
     const fetchMenu = async ()=>{
         const data = await fetch((0, _constants.MENU_API_URL) + resId);
         const json = await data.json();
-        console.log("JSON DATA: " + json);
+        //await console.log("JSON DATA: "+json)
         setResInfo(json.data);
+        console.log(resInfo);
     };
     return resInfo;
 };
