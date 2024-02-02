@@ -36238,7 +36238,7 @@ const RestaurantMenu = ()=>{
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
                 children: itemCards.map((item)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                         children: item.card.info.name
-                    }, void 0, false, {
+                    }, item.card.info.id, false, {
                         fileName: "src/Components/RestaurnantMenu.js",
                         lineNumber: 35,
                         columnNumber: 21
