@@ -1,4 +1,4 @@
-.header{
+/*.header{
     display:flex;
   align-items:center;
   justify-content:space-between;
@@ -91,6 +91,25 @@ ul>button{
 .menus h1,h3{
     text-align: center;
 }
-.menu h3{
+
+.menus .eachCategory{
+    border: 1px solid black;
+    text-align: left;
+    padding-left: 5px;
     
 }
+
+.itemDetails{
+    text-align : left;
+}
+
+.categoryButton{
+    width:100px;
+    height:50px;
+    padding-right:10px;
+    background-color: white;
+}*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

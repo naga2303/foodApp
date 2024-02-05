@@ -27,5 +27,8 @@
   },
   "browserslist": [
     "last 100 versions"
-  ]
+  ],
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
 }
