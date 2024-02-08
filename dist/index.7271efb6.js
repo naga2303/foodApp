@@ -36202,7 +36202,7 @@ const RestaurantMenu = ()=>{
     _s();
     const { resId } = (0, _reactRouterDom.useParams)();
     const resInfo = (0, _useRestaurnantMenuDefault.default)(resId);
-    const [buttonClick, setButtonClick] = (0, _react.useState)(null);
+    const [buttonClick, setButtonClick] = (0, _react.useState)(0);
     if (resInfo === null) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
         fileName: "src/Components/RestaurnantMenu.js",
         lineNumber: 17,
@@ -36274,14 +36274,24 @@ const RestaurantMenu = ()=>{
         columnNumber: 9
     }, undefined);
 };
-_s(RestaurantMenu, "kRD4uYwv4mejcoFh0fgg8H7CpP0=", false, function() {
+_s(RestaurantMenu, "Z8PrzIsgsJbwQYMs9rC+953WTUY=", false, function() {
     return [
         (0, _reactRouterDom.useParams),
         (0, _useRestaurnantMenuDefault.default)
     ];
 });
 _c = RestaurantMenu;
-exports.default = RestaurantMenu;
+exports.default = RestaurantMenu; /**
+ * Here, the showItems is defined because of the below scenario.
+ * If one accordian is expanded then other should be collapsed, if we use the useState in the Restaurant category, then eact category will have its own state.
+ * To over come this, the power expand and collapse provided to restaurant menu, so that it can handle. 
+ * here the index means the nth of accordian. 
+ * The Restaurant category is a controlled component, it is controlled via props from the restaurant menu page. 
+ * const[buttonClick,setButtonClick] = useState(0); = This particular statement is for expanding the accordian using index. Here, the 0 means the first one will be expanded. 
+ * setButtonClick() - It is a function which will be called for every click on the expanded button. Each accordian will have this function. (Refer react dev tools).
+ * setButtonClick = {()=>setButtonClick(index)} - This function is very important, it will get the index of the click which is made on accordian,
+ * Using this index, the clicked accordian will expand and others will collapse.
+ */ 
 var _c;
 $RefreshReg$(_c, "RestaurantMenu");
 
@@ -36394,7 +36404,9 @@ const RestaurnantCategories = ({ data, showItems, setButtonClick })=>{
     }, undefined);
 };
 _c = RestaurnantCategories;
-exports.default = RestaurnantCategories;
+/**
+ * ShowItems - it is a state variable used for accordian expand and collapse. By default it false, on button click it changes to true.
+ */ exports.default = RestaurnantCategories;
 var _c;
 $RefreshReg$(_c, "RestaurnantCategories");
 

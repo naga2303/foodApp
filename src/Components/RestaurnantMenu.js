@@ -10,7 +10,7 @@ const RestaurantMenu = ()=>{
   const {resId} = useParams();
 
   const resInfo = useRestaurnantMenu(resId);
-  const[buttonClick,setButtonClick] = useState(null);
+  const[buttonClick,setButtonClick] = useState(0);
   
 
    
@@ -71,3 +71,21 @@ const RestaurantMenu = ()=>{
     )
 }
 export default RestaurantMenu;
+
+/**
+ * Here, the showItems is defined because of the below scenario.
+ * If one accordian is expanded then other should be collapsed, if we use the useState in the Restaurant category, then eact category will have its own state.
+ * To over come this, the power expand and collapse provided to restaurant menu, so that it can handle. 
+ * here the index means the nth of accordian. 
+ * The Restaurant category is a controlled component, it is controlled via props from the restaurant menu page. 
+ * const[buttonClick,setButtonClick] = useState(0); = This particular statement is for expanding the accordian using index. Here, the 0 means the first one will be expanded. 
+ * setButtonClick() - It is a function which will be called for every click on the expanded button. Each accordian will have this function. (Refer react dev tools).
+ * setButtonClick = {()=>setButtonClick(index)} - This function is very important, it will get the index of the click which is made on accordian,
+ * Using this index, the clicked accordian will expand and others will collapse.
+ * Props drilling - passing data from parent to child. ex: restaurnantCategories to restaurantMenu to Itemlist. A data needs to read by itemList which is 
+ * defined in the restaurantCategory. (props drillling should be avoided)
+ * 
+ * 
+ 
+
+*/

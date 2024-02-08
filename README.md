@@ -7,3 +7,5 @@ Installations
  https://github.com/KalyanGupta/ReactAssignments/blob/main/Assignment1/App.js
 
  https://www.copycat.dev/blog/react-usestate-hook/
+
+ React context overcomes the problem of props drilling.

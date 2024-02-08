@@ -18,10 +18,14 @@ return (
             <span>🔽</span>
              </div>
             { showItems && <ItemList items={data.itemCards} />}
+            
              </div>
         </div>
 )
 }
 
+/**
+ * ShowItems - it is a state variable used for accordian expand and collapse. By default it false, on button click it changes to true.
+ */
 
 export default RestaurnantCategories;
