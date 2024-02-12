@@ -60,13 +60,13 @@ const Body = () =>{
     return (
         
         <div className="body">
-             <input type="text" className="searchBox" value={searchText} onChange={(e)=>{
+             <input type="text" className="searchBox border border-black m-2 p-2" value={searchText} onChange={(e)=>{
             setsearchText(e.target.value)
              console.log("Search Text: "+searchText)          
          }}>
          </input>
 
-         <button className="searchMe" onClick={()=>{
+         <button className="searchMe m-2" onClick={()=>{
             const filteredRestaurant = listofRestaurants.filter((res)=>
             res.info.name.toLowerCase().includes(searchText.toLowerCase()))
             setFilteredRestaurant(filteredRestaurant)
@@ -74,29 +74,29 @@ const Body = () =>{
             
             }}>FindME!
         </button>
-            <button className="topRated" onClick={()=>{
+            <button className="topRated m-2 p-2 bg-blue-200 rounded-lg hover:bg-slate-500" onClick={()=>{
                 const filteredRestaurant = listofRestaurants.filter((res)=>
                 res.info.avgRating>4)
                 setFilteredRestaurant(filteredRestaurant)
             }}>
-                To Rated Restaurnants
+                Top Rated Restaurnants
             </button>
 
-            <button className="onlyAvadi" onClick={()=>{
+            <button className="onlyAvadi m-2 p-2 bg-blue-200 rounded-lg hover:bg-slate-500" onClick={()=>{
                 const filteredRestaurant = listofRestaurants.filter((res)=>
                 res.info.areaName == "Ambattur")
                 setFilteredRestaurant(filteredRestaurant)
             }}>
-                only In AVADI
+                AVADI
             </button>
 
-            <button className="clear" onClick={()=>{
+            <button className="clear m-2 p-2 bg-blue-200 rounded-lg hover:bg-slate-500" onClick={()=>{
                  const filteredRestaurant = listofRestaurants
                  setFilteredRestaurant(filteredRestaurant)
             }}>Clear</button>
 
             
-            <div className="cards">
+            <div className="cards flex flex-wrap">
                {
                 
                  filteredRestaurant.map((restaurnant) =>(

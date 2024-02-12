@@ -34102,7 +34102,7 @@ const Body = ()=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
                 type: "text",
-                className: "searchBox",
+                className: "searchBox border border-black m-2 p-2",
                 value: searchText,
                 onChange: (e)=>{
                     setsearchText(e.target.value);
@@ -34114,7 +34114,7 @@ const Body = ()=>{
                 columnNumber: 14
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                className: "searchMe",
+                className: "searchMe m-2",
                 onClick: ()=>{
                     const filteredRestaurant = listofRestaurants.filter((res)=>res.info.name.toLowerCase().includes(searchText.toLowerCase()));
                     setFilteredRestaurant(filteredRestaurant);
@@ -34126,31 +34126,31 @@ const Body = ()=>{
                 columnNumber: 10
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                className: "topRated",
+                className: "topRated m-2 p-2 bg-blue-200 rounded-lg hover:bg-slate-500",
                 onClick: ()=>{
                     const filteredRestaurant = listofRestaurants.filter((res)=>res.info.avgRating > 4);
                     setFilteredRestaurant(filteredRestaurant);
                 },
-                children: "To Rated Restaurnants"
+                children: "Top Rated Restaurnants"
             }, void 0, false, {
                 fileName: "src/Components/Body.js",
                 lineNumber: 77,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                className: "onlyAvadi",
+                className: "onlyAvadi m-2 p-2 bg-blue-200 rounded-lg hover:bg-slate-500",
                 onClick: ()=>{
                     const filteredRestaurant = listofRestaurants.filter((res)=>res.info.areaName == "Ambattur");
                     setFilteredRestaurant(filteredRestaurant);
                 },
-                children: "only In AVADI"
+                children: "AVADI"
             }, void 0, false, {
                 fileName: "src/Components/Body.js",
                 lineNumber: 85,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                className: "clear",
+                className: "clear m-2 p-2 bg-blue-200 rounded-lg hover:bg-slate-500",
                 onClick: ()=>{
                     const filteredRestaurant = listofRestaurants;
                     setFilteredRestaurant(filteredRestaurant);
@@ -34162,7 +34162,7 @@ const Body = ()=>{
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "cards",
+                className: "cards flex flex-wrap",
                 children: filteredRestaurant.map((restaurnant)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                         to: "/restaurnants/" + restaurnant.info.id,
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resCardsDefault.default), {
@@ -34215,17 +34215,18 @@ const ResCards = (props)=>{
     const { resData } = props;
     const { cloudinaryImageId, name, avgRating, cuisines, costForTwo } = resData?.info;
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "res-card",
+        className: "res-card m-4 p-4 w-[250px] rounded-lg bg-gray-100 hover:bg-gray-200",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                 src: (0, _constants.CDN_URL) + cloudinaryImageId,
-                className: "resLogo"
+                className: "resLogo "
             }, void 0, false, {
                 fileName: "src/Components/ResCards.js",
                 lineNumber: 8,
                 columnNumber: 15
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                className: "font-bold italic",
                 children: name
             }, void 0, false, {
                 fileName: "src/Components/ResCards.js",
@@ -36291,7 +36292,13 @@ exports.default = RestaurantMenu; /**
  * setButtonClick() - It is a function which will be called for every click on the expanded button. Each accordian will have this function. (Refer react dev tools).
  * setButtonClick = {()=>setButtonClick(index)} - This function is very important, it will get the index of the click which is made on accordian,
  * Using this index, the clicked accordian will expand and others will collapse.
- */ 
+ * Props drilling - passing data from parent to child. ex: restaurnantCategories to restaurantMenu to Itemlist. A data needs to read by itemList which is 
+ * defined in the restaurantCategory. (props drillling should be avoided)
+ * 
+ * 
+ 
+
+*/ 
 var _c;
 $RefreshReg$(_c, "RestaurantMenu");
 
