@@ -38,8 +38,8 @@ const RestaurantMenu = ()=>{
   }
     return (
         <div className="menus">
-            <h1>{name}</h1>
-            <h3>{cuisines}</h3>
+            <h1 className="font-bold text-center text-lg m-4">{name}</h1>
+            <h3 className="font-bold">{cuisines}</h3>
             <h3>{costForTwoMessage}</h3>
             
             <h3 className="categories">

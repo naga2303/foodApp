@@ -66,7 +66,7 @@ const Body = () =>{
          }}>
          </input>
 
-         <button className="searchMe m-2" onClick={()=>{
+         <button className="searchMe m-2 border bg-blue-200 p-2 rounded-lg hover:bg-slate-500" onClick={()=>{
             const filteredRestaurant = listofRestaurants.filter((res)=>
             res.info.name.toLowerCase().includes(searchText.toLowerCase()))
             setFilteredRestaurant(filteredRestaurant)

@@ -4,6 +4,7 @@ import Header from "./Components/Header";
 import Body from "./Components/Body";
 import About from "./Components/About";
 import User from "./Components/User";
+import Carts from "./Components/Carts"
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import RestaurantMenu from "./Components/RestaurnantMenu";
@@ -44,6 +45,10 @@ const appRouter = createBrowserRouter([
             {
                 path:"/user",
                 element: <User />
+            },
+            {
+                path:"/carts",
+                element: <Carts />
             },
             {
                 path:"/restaurnants/:resId",
