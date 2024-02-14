@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { LOGO_Details } from "../Utils/Constants"
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 
 
 const Header = () =>{
 
- 
+    const cartItems = useSelector((store) => store.cart.items);
     
     return (
         <div className="header flex text-center space-x-0 border-spacing-0 bg-blue-100 shadow-lg justify-between">
@@ -31,7 +33,7 @@ const Navigation = () =>{
                 <Link to="/user">Users</Link>
                 </li>
                 <li className="px-2 font-bold">
-                <Link to="/carts">Carts</Link>
+                <Link to="/carts">Carts -</Link>
                 </li>
                 <button className="logStatus px-2 cursor-pointer font-bold" onClick={()=>{
                     buttonName == "Login" ? setbuttonName("Logout"): setbuttonName("Login")
