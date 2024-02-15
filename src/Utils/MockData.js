@@ -2,7 +2,7 @@ const ResList = [
     {
      "info":{
          "id":"78036",
-         "name":"Burger King",
+         "name":"Subway",
          "cloudinaryImageId":"e33e1d3ba7d6b2bb0d45e1001b731fcf",
          "locality":"Central Plaza, Kalina",
          "areaName":"Santacruz East",

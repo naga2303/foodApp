@@ -19,7 +19,7 @@ const Header = () =>{
         </div>
     )
 }
-const Navigation = () =>{
+export const Navigation = () =>{
     const [buttonName,setbuttonName] = useState("Login")
     const cartItems = useSelector((store)=>
  store.cart.items
@@ -45,7 +45,8 @@ const Navigation = () =>{
             </ul>
         </div>
     )
-}
 
-export default Header
+            }
+export default Header;
+
 
