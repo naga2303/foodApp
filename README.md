@@ -9,3 +9,6 @@ Installations
  https://www.copycat.dev/blog/react-usestate-hook/
 
  React context overcomes the problem of props drilling.
+
+ React Redux playwright issue
+  //https://github.com/microsoft/playwright/issues/15325 - issue for redux store

@@ -27254,7 +27254,6 @@ $parcel$ReactRefreshHelpers$2257.prelude(module);
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Navigation", ()=>Navigation);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _constants = require("../Utils/Constants");
@@ -27262,7 +27261,10 @@ var _reactRouterDom = require("react-router-dom");
 var _reactRedux = require("react-redux");
 var _s = $RefreshSig$();
 const Header = ()=>{
+    _s();
     //   const cartItems = useSelector((store) => store.cart.items);
+    const [buttonName, setbuttonName] = (0, _react.useState)("Login");
+    const cartItems = (0, _reactRedux.useSelector)((store)=>store.cart.items);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "header flex text-center space-x-0 border-spacing-0 bg-blue-100 shadow-lg justify-between",
         children: [
@@ -27290,9 +27292,98 @@ const Header = ()=>{
                 lineNumber: 17,
                 columnNumber: 17
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Navigation, {}, void 0, false, {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "navigations",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                    className: "navigate flex px-2",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            className: "px-2 font-bold",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                to: "/",
+                                children: "Home"
+                            }, void 0, false, {
+                                fileName: "src/Components/Header.js",
+                                lineNumber: 22,
+                                columnNumber: 20
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/Components/Header.js",
+                            lineNumber: 21,
+                            columnNumber: 17
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            className: "px-2 font-bold",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                to: "/about",
+                                children: "About"
+                            }, void 0, false, {
+                                fileName: "src/Components/Header.js",
+                                lineNumber: 25,
+                                columnNumber: 17
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/Components/Header.js",
+                            lineNumber: 24,
+                            columnNumber: 17
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            className: "px-2 font-bold",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                to: "/user",
+                                children: "Users"
+                            }, void 0, false, {
+                                fileName: "src/Components/Header.js",
+                                lineNumber: 28,
+                                columnNumber: 17
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/Components/Header.js",
+                            lineNumber: 27,
+                            columnNumber: 17
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            className: "px-2 font-bold cartItemsClass",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                to: "/carts",
+                                children: [
+                                    "Carts -(",
+                                    cartItems.length,
+                                    " items)"
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/Components/Header.js",
+                                lineNumber: 31,
+                                columnNumber: 17
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/Components/Header.js",
+                            lineNumber: 30,
+                            columnNumber: 17
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                            className: "logStatus px-2 cursor-pointer font-bold",
+                            onClick: ()=>{
+                                buttonName == "Login" ? setbuttonName("Logout") : setbuttonName("Login");
+                            },
+                            children: [
+                                " ",
+                                buttonName
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/Components/Header.js",
+                            lineNumber: 33,
+                            columnNumber: 17
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/Components/Header.js",
+                    lineNumber: 20,
+                    columnNumber: 13
+                }, undefined)
+            }, void 0, false, {
                 fileName: "src/Components/Header.js",
-                lineNumber: 18,
+                lineNumber: 19,
                 columnNumber: 17
             }, undefined)
         ]
@@ -27302,116 +27393,19 @@ const Header = ()=>{
         columnNumber: 9
     }, undefined);
 };
-_c = Header;
-const Navigation = ()=>{
-    _s();
-    const [buttonName, setbuttonName] = (0, _react.useState)("Login");
-    const cartItems = (0, _reactRedux.useSelector)((store)=>store.cart.items);
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "navigations",
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-            className: "navigate flex px-2",
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                    className: "px-2 font-bold",
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                        to: "/",
-                        children: "Home"
-                    }, void 0, false, {
-                        fileName: "src/Components/Header.js",
-                        lineNumber: 31,
-                        columnNumber: 20
-                    }, undefined)
-                }, void 0, false, {
-                    fileName: "src/Components/Header.js",
-                    lineNumber: 30,
-                    columnNumber: 17
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                    className: "px-2 font-bold",
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                        to: "/about",
-                        children: "About"
-                    }, void 0, false, {
-                        fileName: "src/Components/Header.js",
-                        lineNumber: 34,
-                        columnNumber: 17
-                    }, undefined)
-                }, void 0, false, {
-                    fileName: "src/Components/Header.js",
-                    lineNumber: 33,
-                    columnNumber: 17
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                    className: "px-2 font-bold",
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                        to: "/user",
-                        children: "Users"
-                    }, void 0, false, {
-                        fileName: "src/Components/Header.js",
-                        lineNumber: 37,
-                        columnNumber: 17
-                    }, undefined)
-                }, void 0, false, {
-                    fileName: "src/Components/Header.js",
-                    lineNumber: 36,
-                    columnNumber: 17
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                    className: "px-2 font-bold",
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                        to: "/carts",
-                        children: [
-                            "Carts -(",
-                            cartItems.length,
-                            " items)"
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/Components/Header.js",
-                        lineNumber: 40,
-                        columnNumber: 17
-                    }, undefined)
-                }, void 0, false, {
-                    fileName: "src/Components/Header.js",
-                    lineNumber: 39,
-                    columnNumber: 17
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                    className: "logStatus px-2 cursor-pointer font-bold",
-                    onClick: ()=>{
-                        buttonName == "Login" ? setbuttonName("Logout") : setbuttonName("Login");
-                    },
-                    children: [
-                        " ",
-                        buttonName
-                    ]
-                }, void 0, true, {
-                    fileName: "src/Components/Header.js",
-                    lineNumber: 42,
-                    columnNumber: 17
-                }, undefined)
-            ]
-        }, void 0, true, {
-            fileName: "src/Components/Header.js",
-            lineNumber: 29,
-            columnNumber: 13
-        }, undefined)
-    }, void 0, false, {
-        fileName: "src/Components/Header.js",
-        lineNumber: 28,
-        columnNumber: 9
-    }, undefined);
-};
-_s(Navigation, "WzINm5D3O3NTgNnhZMigXD8D5Eo=", false, function() {
+_s(Header, "WzINm5D3O3NTgNnhZMigXD8D5Eo=", false, function() {
     return [
         (0, _reactRedux.useSelector)
     ];
 });
-_c1 = Navigation;
+_c = Header;
+//export const Navigation = () =>{
+//  return (
+//)
+//  }
 exports.default = Header;
-var _c, _c1;
+var _c;
 $RefreshReg$(_c, "Header");
-$RefreshReg$(_c1, "Navigation");
 
   $parcel$ReactRefreshHelpers$2257.postlude(module);
 } finally {
@@ -36172,7 +36166,7 @@ const ResList = [
     {
         "info": {
             "id": "78036",
-            "name": "Burger King",
+            "name": "Subway",
             "cloudinaryImageId": "e33e1d3ba7d6b2bb0d45e1001b731fcf",
             "locality": "Central Plaza, Kalina",
             "areaName": "Santacruz East",
@@ -38015,14 +38009,23 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 const About = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
-            children: "About Us Page"
-        }, void 0, false, {
-            fileName: "src/Components/About.js",
-            lineNumber: 4,
-            columnNumber: 13
-        }, undefined)
-    }, void 0, false, {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                children: "About Us Page"
+            }, void 0, false, {
+                fileName: "src/Components/About.js",
+                lineNumber: 4,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                children: "About defined Page"
+            }, void 0, false, {
+                fileName: "src/Components/About.js",
+                lineNumber: 5,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
         fileName: "src/Components/About.js",
         lineNumber: 3,
         columnNumber: 9
@@ -38141,22 +38144,13 @@ const RestaurantMenu = ()=>{
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                 className: "categories",
-                children: resCategories.map((resCat, index)=>/*  <ul className="eachCategory">{e.card?.card?.title   }
-                    <button className="categoryButton" onClick="myFunction()">Items!!!</button>
-                     <li className="itemDetails">{
-                        e.card?.card?.itemCards.map((g)=>
-                        (
-                            <h3>{g.card?.info?.name}</h3>
-                        ))
-                        }</li>
-                    </ul>*/ //console.log("Index: "+index)
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurnantCategoriesDefault.default), {
+                children: resCategories.map((resCat, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurnantCategoriesDefault.default), {
                         data: resCat.card?.card,
                         showItems: index == buttonClick ? true : false,
                         setButtonClick: ()=>setButtonClick(index)
                     }, resCat.card?.card?.title, false, {
                         fileName: "src/Components/RestaurnantMenu.js",
-                        lineNumber: 57,
+                        lineNumber: 47,
                         columnNumber: 21
                     }, undefined))
             }, void 0, false, {
@@ -38427,10 +38421,10 @@ const cartSlice = (0, _toolkit.createSlice)({
         addItem: (state, action)=>{
             state.items.push(action.payload);
         },
-        removeItem: (state, action)=>{
+        removeItem: (state)=>{
             state.items.pop();
         },
-        clearItem: (state, action)=>{
+        clearItem: (state)=>{
             state.items.length = 0;
         }
     }

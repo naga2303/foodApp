@@ -1,14 +1,13 @@
 import { test, expect } from '@playwright/experimental-ct-react';
 import About from "../About";
 import Body from '../Body';
-import { BrowserRouter } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import {Navigation} from '../Header';
-import appStore from '../../Utils/appStore'
 import ResCards from '../ResCards';
-import Mock_Data from '../../Utils/MockData'
+import Mock_Data from '../Mocks/resCardMock.json';
+import { StoreWrapper } from '../StoreWrapper';
 
-    test.skip("Test the about us page",async({mount})=>{
+
+
+    test("Test the about us page",async({mount})=>{
         const component = await mount(<About />)
         await expect(component).toContainText('About Us Page')
     })
@@ -20,9 +19,21 @@ import Mock_Data from '../../Utils/MockData'
         await expect(rcvdButton).toBe(button)
     })
 
-    test("To check the number of restaurants in the page", async({mount,page})=>{
-        var MockData ="naga";
-        await mount  (<ResCards resData={Mock_Data} />)
-       
+    test("To check the restaurant name using mockdata in the page", async({mount})=>{
+        
+       const mockTest= await mount  (<ResCards resData={Mock_Data} />)
+       const mockdata = await mockTest.getByText("Leon's - Burgers & Wings (Leon Grill)")
+       console.log(mockdata)
+       await expect(mockdata).toBeTruthy()
        
     })
+
+
+    test("To verify the items in the Header", async({mount})=>{
+        const hdrComponent = await mount (<StoreWrapper />);
+      const txt = hdrComponent.locator('.companyName')
+      await expect(txt).toHaveText('Just Order!!!')
+      const cartText = hdrComponent.locator('.cartItemsClass')
+      await expect(cartText).toHaveText('Carts -(0 items)')
+    })
+

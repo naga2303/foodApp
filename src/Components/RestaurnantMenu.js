@@ -44,16 +44,6 @@ const RestaurantMenu = ()=>{
             
             <h3 className="categories">
                 {resCategories.map((resCat,index)=>(
-                  /*  <ul className="eachCategory">{e.card?.card?.title   }
-                    <button className="categoryButton" onClick="myFunction()">Items!!!</button>
-                     <li className="itemDetails">{
-                        e.card?.card?.itemCards.map((g)=>
-                        (
-                            <h3>{g.card?.info?.name}</h3>
-                        ))
-                        }</li>
-                    </ul>*/
-                    //console.log("Index: "+index)
                     <RestaurnantCategories 
                     key = {resCat.card?.card?.title}
                     data = {resCat.card?.card}
